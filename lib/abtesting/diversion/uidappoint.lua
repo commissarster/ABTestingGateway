@@ -41,13 +41,13 @@ _M.check = function(self, policy)
             return {false, info, desc}
         end
         
-        for _, uid in pairs(uidset) do 
-            if not tonumber(uid) then
-                local info = ERRORINFO.POLICY_INVALID_ERROR 
-                local desc = 'uid invalid '
-                return {false, info, desc}
-            end
-        end
+        -- for _, uid in pairs(uidset) do 
+        --    if not tonumber(uid) then
+        --        local info = ERRORINFO.POLICY_INVALID_ERROR 
+        --        local desc = 'uid invalid '
+        --        return {false, info, desc}
+        --    end
+        -- end
         --TODO: need to check upstream alive
     end
     
@@ -86,9 +86,9 @@ _M.get = function(self)
 end
 
 _M.getUpstream = function(self, uid)
-    if not tonumber(uid) then
-        return nil
-    end
+    -- if not tonumber(uid) then
+    --    return nil
+    -- end
     
     local database, key = self.database, self.policyLib
     
